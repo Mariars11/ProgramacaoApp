@@ -23,3 +23,11 @@ lista.forEach(item => {
 
 //Altera o sepador da lista de ',' para '/'
 console.log(lista.join("/"));
+
+let lista2 = ["Fruta", "Verdura", "Carne", "Besteira"];
+//Une um array em outro
+let listaConcatLista2 = lista.concat(lista2);
+
+listaConcatLista2.forEach(item => {
+    console.log(item);
+}); 
