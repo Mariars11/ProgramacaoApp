@@ -1,4 +1,5 @@
-// 1 - crie um programa que sorteei numeros da loteria, aleatoria, conforme o jogo escolhido. Não podem ter o mesmo numero, sem repeticao.
+// 1 - crie um programa que sorteei numeros da loteria, aleatoria, 
+//conforme o jogo escolhido. Não podem ter o mesmo numero, sem repeticao.
 
 
 function escolherLoteria(){

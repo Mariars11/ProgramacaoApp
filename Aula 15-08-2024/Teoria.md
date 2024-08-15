@@ -18,7 +18,7 @@
 
 
     
-    2 - crie um programa que leia uma dada temperatura e converta para a temperatura escolhida pelo o usuario.
+    
     3 - crie um programa para calcular a massa corporia de um individuo
         //Entrada
         -> Altura
