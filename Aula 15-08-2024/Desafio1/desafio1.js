@@ -13,7 +13,7 @@ function escolherLoteria(){
     //alert("Entrei!");
     var opcoes = document.getElementById("opcoesLoteria");
     //O texto do jogo selecionado (mega sena; quina; lotofacil)
-    var text = opcoes.value.options[e.selectedIndex].text;
+    var text = opcoes.options[opcoes.selectedIndex].text;
     let listaJogo = [];
     if(text != null && text != ""){
         switch (text) {

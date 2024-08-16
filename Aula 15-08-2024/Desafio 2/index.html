@@ -7,6 +7,34 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <label>Selecione o tipo:</label>
+        <select name="opcoesTemperatura" id="opcoesTemperatura">
+            <option value="0" disabled selected>Escolha</option>
+            <option value="1">Celsius</option>
+            <option value="2">Fahrenheit</option>
+            <option value="3">Kelvin</option>
+        </select>
+    </div>
+    <div>
+        <label>Informe o valor da temperatura</label>
+        <input type="number" id="temperaturaInformada">
+    </div>
+    <h2>Para qual tipo você quer tranformar?</h2>
+    <div>
+        <label>Selecione o tipo:</label>
+        <select name="opcoesTemperatura" id="opcoesTemperaturaTransformar">
+            <option value="0" disabled selected>Escolha</option>
+            <option value="1">Celsius</option>
+            <option value="2">Fahrenheit</option>
+            <option value="3">Kelvin</option>
+        </select>
+    </div>
+    <div>
+        <button onclick="calcular()">Enviar</button>
+    </div>
+    
+    
     <!-- opcao de temperatura -->
     <!-- texto da temperatura -->
     <!-- temperatura a ser escolhida -->
