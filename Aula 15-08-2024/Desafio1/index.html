@@ -7,12 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+    <label for="">Escolha um jogo</label>
     <select onchange="escolherLoteria()" name="loteria" id="opcoesLoteria">
         <option value="0" disabled selected>Escolha</option>
         <option value="1">Mega Sena</option>
         <option value="2">Lotofácil</option>
         <option value="3">Quina</option>
     </select>
+    <button onclick="limpar()">Limpar</button>
+    <div id="jogo">
+
+    </div>
     <script src="desafio1.js"></script>
 </body>
 </html>
