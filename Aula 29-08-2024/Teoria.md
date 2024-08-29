@@ -8,10 +8,14 @@
 
 - Opção para selecionar
 <img src="image.png" alt="Selecione"/>
-- Create Device canto superior esquerdo
-- Pixel 7 com logo do play store
-- API 35
+
+- Create Device canto superior esquerdo 
+- Pixel 7 com logo do play store 
+- API 35 
 
 # Vscode
-- npx expo start
-- a: inicar android
+- npx expo start 
+- a: inicar android 
+
+
+- Aprender sobre useState
