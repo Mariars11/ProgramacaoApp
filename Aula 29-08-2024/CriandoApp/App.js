@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import {useState} from 'react';
+import { StyleSheet, Text, View, Image, TextInput} from 'react-native';
 
 function App() {
-  let nome = 'Maria Clara'
   return (
     <View style={styles.container}>
-      <Header nome={nome}/>
+      <Header/>
       <ImagemLogo 
         largura={200}
         comprimento={200}
@@ -29,11 +29,29 @@ function ImagemLogo(props){
   )
 }
 
-function Header(props){
-  const nome = props.nome;
-  return (
-      <Text style={{fontSize: 24, color: 'black', fontWeight: 'bold'}}>Bem-Vind@, {nome}</Text>
+function Header(){
+  let inputName = '';
+  const [nome, setNome] = useState('');
+  // const nome = props.nome;
+  if(nome != null && nome != '') {
+    return (
+      <View>        
+        <Text style={{fontSize: 24, color: 'black', fontWeight: 'bold'}}>Bem-Vind@, {nome}</Text>
+      </View>
+     )   
+  }
+  else{
+    return (
+      <TextInput
+          style={{height: 40}}
+          placeholder="Digite seu nome!"
+          onChangeText={n => inputName = n}
+          onSubmitEditing={() => setNome(inputName)}
+          defaultValue={nome}
+        />
     )
+  }
+  
 }
 
 const styles = StyleSheet.create({
