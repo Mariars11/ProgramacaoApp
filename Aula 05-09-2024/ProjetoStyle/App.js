@@ -11,7 +11,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bom dia!</Text>
-      <Text>Valor: {count}</Text>
+      <Text style={styles.count}>Valor: {count}</Text>
       <Button
         title='Clique' 
         onPress={() => {
@@ -29,10 +29,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    height: 100
   },
   title:{
     fontWeight: 'bold',
     color: 'blue',
-    fontSize: 25
+    fontSize: 30
+  },
+  count:{
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 22
   }
 });
