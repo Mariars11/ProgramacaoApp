@@ -39,10 +39,10 @@ export default App;
 function User(props)  {
   return(
     <View>
-        <Text style={styles.title}>Usuario: {props.data.id}</Text>
-        <Text style={styles.text}>{props.data.nome}</Text>
-        <Text style={styles.text}>{props.data.idade}</Text>
-        <Text style={styles.text}>{props.data.email}</Text>
+        <Text style={styles.title}>Usuário: {props.data.id}</Text>
+        <Text style={styles.text}>Nome: {props.data.nome}</Text>
+        <Text style={styles.text}>Idade: {props.data.idade}</Text>
+        <Text style={styles.text}>Email: {props.data.email}</Text>
     </View>
   )
 }
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 100,
-    marginLeft: 20
+    marginLeft: 20,
   },
   title: {
     fontWeight: 'bold',
