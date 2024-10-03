@@ -1,0 +1,2 @@
+# Componente Picker
+# componente slider
