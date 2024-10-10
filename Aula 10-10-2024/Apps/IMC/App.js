@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      { textoIMC != null && textoIMC != '' ? <Text>{textoIMC}</Text> : <Text>Calcule seu IMC</Text> }
+      { textoIMC != null && textoIMC != '' ? <Text>{imc} - {textoIMC}</Text> : <Text>Calcule seu IMC</Text> }
       <Image style={styles.imagem} source={require(urlIMGBalanca)}/>
       <TextInput
         onChangeText={setPeso}
