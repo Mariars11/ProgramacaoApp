@@ -11,9 +11,8 @@ export default function App() {
 
   calcularIMC = () => {
     if(peso != 0 && altura != 0){
-      setAltura(altura = altura / 100);
 
-      let calculoIMC = Number((peso / Math.pow(altura, 2)).toFixed(2));
+      let calculoIMC = Number((peso / Math.pow((altura / 100), 2)).toFixed(2));
       setIMC(imc = calculoIMC);
       console.log(`Altura: ${altura}\nPeso:${peso}\nIMC:${imc}`);
 
@@ -34,25 +33,40 @@ export default function App() {
       }
     }
   };
-
+  limparInputs = () => {
+    setPeso(null)
+    setAltura(null);
+    setTextoIMC('');
+  };
   return (
     <View style={styles.container}>
-      { textoIMC != null && textoIMC != '' ? <Text>{imc} - {textoIMC}</Text> : <Text>Calcule seu IMC</Text> }
+      { textoIMC != null && textoIMC != '' ? <Text style={styles.textTitle}>{imc} - {textoIMC}</Text> : <Text style={styles.textTitle}>Calcule seu IMC</Text> }
       <Image style={styles.imagem} source={require(urlIMGBalanca)}/>
-      <TextInput
-        onChangeText={setPeso}
-        value={peso}
-        placeholder='Digite seu peso em kg'
-        keyboardType="numeric"
-      />
-      {/* { peso != null && peso != '' ? <Text>{peso}</Text> : null } */}
-      <TextInput
-        onChangeText={setAltura}
-        value={altura}
-        placeholder='Digite sua altura em cm'
-        keyboardType="numeric"
-      />
-      <Button title="Calcular" color='blue' onPress={()=> {this.calcularIMC()}}/>
+      <View style={styles.viewInput}>
+        <Text style={{fontWeight: 'bold'}}>Peso</Text>
+        <TextInput
+          style={styles.inputsPesoAltura}
+          onChangeText={setPeso}
+          value={peso}
+          placeholder='Digite seu peso em kg'
+          keyboardType="numeric"
+        />
+      </View>
+      <View style={styles.viewInput}>
+        <Text style={{fontWeight: 'bold'}}>Altura (cm)</Text>
+        <TextInput
+          style={styles.inputsPesoAltura}
+          onChangeText={setAltura}
+          value={altura}
+          placeholder='Digite sua altura em cm'
+          keyboardType="numeric"
+        />
+      </View>
+      <View style={styles.viewBtn}>
+        { textoIMC != null && textoIMC != '' ? <Button title="Limpar" color='red' onPress={()=> {this.limparInputs()}}/> : null}
+
+        <Button title="Calcular" color='blue' onPress={()=> {this.calcularIMC()}}/>
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -68,6 +82,28 @@ const styles = StyleSheet.create({
   imagem:{
     maxWidth: 250,
     maxHeight: 250,
+    marginBottom: 20,
     resizeMode: 'contain'
   },
+  textTitle:{
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginBottom: 40
+  },
+  inputsPesoAltura:{
+    borderColor: 'black',
+    borderWidth: 1,
+    width: 200,
+    height: 40,
+    borderRadius: 15,
+    textAlign: 'center',
+  },
+  viewInput:{
+    marginBottom: 15
+  },
+  viewBtn:{
+    marginTop: 30,
+    flexDirection: 'row',
+    gap: 15
+  }
 });
